@@ -1,0 +1,15 @@
+.banner {
+  background-image: url("https://images.unsplash.com/photo-1572443759715-9a162b022f65?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 64vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.banner > h1 {
+  font-family: $nav-bar-font;
+  font-weight: bold;
+}
