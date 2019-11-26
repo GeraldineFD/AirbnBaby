@@ -10,10 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_092453) do
+ActiveRecord::Schema.define(version: 2019_11_26_131515) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "baby_materials", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.integer "price"
+    t.boolean "sale"
+    t.integer "rating"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_baby_materials_on_user_id"
+  end
+
+  create_table "sales", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "baby_material_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["baby_material_id"], name: "index_sales_on_baby_material_id"
+    t.index ["user_id"], name: "index_sales_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +48,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_092453) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "baby_materials", "users"
+  add_foreign_key "sales", "baby_materials"
+  add_foreign_key "sales", "users"
 end
