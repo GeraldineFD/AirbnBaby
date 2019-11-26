@@ -7,7 +7,33 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts 'Cleaning database...'
 BabyMaterial.destroy_all
+User.destroy_all
+Sale.destroy_all
 
-BabyMaterial.create(title: "Poussette", description: 'La poussette est un moyen de transport pour enfant en bas âge.', price: 20, rating: 3)
+user1=User.create!(email: "gefouque@gmail.com", password: "password")
+user2=User.create!(email: "gfouque@gmail.com", password: "password")
+user3=User.create!(email: "user3@gmail.com", password: "password")
+user4=User.create!(email: "user4@gmail.com", password: "password")
+user5=User.create!(email: "user5@gmail.com", password: "password")
+user6=User.create!(email: "user6@gmail.com", password: "password")
+user7=User.create!(email: "user7@gmail.com", password: "password")
+user8=User.create!(email: "user8@gmail.com", password: "password")
+user9=User.create!(email: "user9@gmail.com", password: "password")
+user10=User.create!(email: "user10@gmail.com", password: "password")
+
+
+poussette=BabyMaterial.create!(title: "Poussette", description: 'La poussette est un moyen de transport pour enfant en bas âge.', price: 20, rating: 3, user: user1)
+litparapluie=BabyMaterial.create!(title: "Lit parapluie", description: 'Très bon état', price: 20, rating: 3, user: user3)
+cosy=BabyMaterial.create!(title: "Cosy", description: 'ok', price: 20, rating: 3, user: user5)
+chauffebiberon=BabyMaterial.create!(title: "Chauffebiberon", description: 'Très bon état', price: 20, rating: 3, user: user7)
+portebebe=BabyMaterial.create!(title: "Portebebe", description: 'Très léger', price: 20, rating: 3, user: user9)
+
+
+
+Sale.create!(baby_material: poussette, user: user2)
+Sale.create!(baby_material: litparapluie, user: user4)
+Sale.create!(baby_material: cosy, user: user6)
+Sale.create!(baby_material: chauffebiberon, user: user8)
+Sale.create!(baby_material: portebebe, user: user10)
 
 puts 'Finished!'
