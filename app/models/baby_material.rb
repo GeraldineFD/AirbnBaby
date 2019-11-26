@@ -1,6 +1,6 @@
 class BabyMaterial < ApplicationRecord
   belongs_to :user
-  has_many :sales
+  has_many :sales, dependent: :destroy
   validates :title, presence: true
   validates :description, presence: true
   validates :price, numericality: { only_integer: true }
