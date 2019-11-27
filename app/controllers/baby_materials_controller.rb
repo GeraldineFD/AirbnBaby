@@ -15,7 +15,7 @@ class BabyMaterialsController < ApplicationController
     @baby_material = BabyMaterial.new(material_params)
     @baby_material.user = current_user
     if @baby_material.save
-      redirect_to admin_baby_materials_path(@baby_material)
+      redirect_to admin_baby_material_index_path
     else
       render 'new'
     end
@@ -36,7 +36,7 @@ class BabyMaterialsController < ApplicationController
   private
 
   def material_params
-    params.require(:baby_material).permit(:title, :description, :address, :price)
+    params.require(:baby_material).permit(:title, :description, :address, :price, :photo)
   end
 
   def set_baby_material
