@@ -1,4 +1,5 @@
 class BabyMaterialsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   before_action :set_baby_material, only: [:show, :edit, :update, :destroy]
   def index
     @baby_materials = BabyMaterial.all
