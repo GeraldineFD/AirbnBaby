@@ -22,11 +22,11 @@ user9=User.create!(email: "user9@gmail.com", password: "password")
 user10=User.create!(email: "user10@gmail.com", password: "password")
 
 
-poussette=BabyMaterial.create!(title: "Poussette", description: 'La poussette est un moyen de transport pour enfant en bas âge.', price: 20, rating: 3, user: user1)
-litparapluie=BabyMaterial.create!(title: "Lit parapluie", description: 'Très bon état', price: 20, rating: 3, user: user3)
-cosy=BabyMaterial.create!(title: "Cosy", description: 'ok', price: 20, rating: 3, user: user5)
-chauffebiberon=BabyMaterial.create!(title: "Chauffebiberon", description: 'Très bon état', price: 20, rating: 3, user: user7)
-portebebe=BabyMaterial.create!(title: "Portebebe", description: 'Très léger', price: 20, rating: 3, user: user9)
+poussette=BabyMaterial.create!(title: "Poussette", description: 'La poussette est un moyen de transport pour enfant en bas âge.', address: '160 rue Paradis, Marseille', price: 20, rating: 3, user: user1)
+litparapluie=BabyMaterial.create!(title: "Lit parapluie", description: 'Très bon état', address: '161 rue Paradis, Marseille', price: 20, rating: 3, user: user3)
+cosy=BabyMaterial.create!(title: "Cosy", description: 'ok', address: '162 rue Paradis, Marseille', price: 20, rating: 3, user: user5)
+chauffebiberon=BabyMaterial.create!(title: "Chauffebiberon", description: 'Très bon état', address: '163 rue Paradis, Marseille', price: 20, rating: 3, user: user7)
+portebebe=BabyMaterial.create!(title: "Portebebe", description: 'Très léger', address: '164 rue Paradis, Marseille', price: 20, rating: 3, user: user9)
 
 
 

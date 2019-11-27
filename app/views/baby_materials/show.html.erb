@@ -1,7 +1,9 @@
 <h2><%= @baby_material.title %></h2>
 <p><%= @baby_material.description %></p>
+<p><%= @baby_material.address %></p>
 <p><%= @baby_material.price %></p>
 <p><%= @baby_material.rating %></p>
+
 
 <div class="btn btn-success">
   <p><%= link_to 'Delete' , baby_material_path, method: :delete, data: { confirm: 'Are you sure'} %></p>

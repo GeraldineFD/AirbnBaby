@@ -36,7 +36,7 @@ class BabyMaterialsController < ApplicationController
   private
 
   def material_params
-    params.require(:baby_material).permit(:title, :description, :price)
+    params.require(:baby_material).permit(:title, :description, :address, :price)
   end
 
   def set_baby_material
