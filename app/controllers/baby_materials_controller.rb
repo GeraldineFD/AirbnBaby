@@ -15,7 +15,7 @@ class BabyMaterialsController < ApplicationController
     @baby_material = BabyMaterial.new(material_params)
     @baby_material.user = current_user
     if @baby_material.save
-      redirect_to baby_material_path(@baby_material)
+      redirect_to admin_baby_materials_path(@baby_material)
     else
       render 'new'
     end
@@ -25,12 +25,12 @@ class BabyMaterialsController < ApplicationController
 
   def update
     @baby_material.update(material_params)
-    redirect_to baby_material_path
+    redirect_to admin_baby_materials_path
   end
 
   def destroy
     @baby_material.destroy
-    redirect_to baby_materials_path
+    redirect_to admin_baby_materials_path
   end
 
   private
