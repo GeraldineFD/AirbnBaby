@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :baby_materials
 
   namespace :admin do
-    resources :baby_materials, only: [:index]
+    get 'baby_material/index', to: "baby_materials#index"
   end
 
 
