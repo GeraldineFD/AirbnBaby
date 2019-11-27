@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_131515) do
+ActiveRecord::Schema.define(version: 2019_11_27_105345) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,11 +19,12 @@ ActiveRecord::Schema.define(version: 2019_11_26_131515) do
     t.string "title"
     t.string "description"
     t.integer "price"
-    t.boolean "sale"
+    t.boolean "sale", default: false
     t.integer "rating"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "address"
     t.index ["user_id"], name: "index_baby_materials_on_user_id"
   end
 
