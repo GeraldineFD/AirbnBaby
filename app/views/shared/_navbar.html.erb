@@ -11,13 +11,13 @@
 
         <% if user_signed_in? %>
           <div title = "Explorer"><li class="nav-item active">
-            <%= link_to '<i class="fas fa-search icon"></i>'.html_safe, "#", class: "nav-link" %>
+            <%= link_to '<i class="fas fa-search icon"></i>'.html_safe, baby_materials_path, class: "nav-link" %>
           </li></div>
           <div title = "Favoris"><li class="nav-item">
-            <%= link_to '<i class="far fa-heart icon"></i>'.html_safe, "#", class: "nav-link" %>
+            <%= link_to '<i class="far fa-heart icon"></i>'.html_safe, '#', class: "nav-link" %>
           </li></div>
           <div title = "Mes ventes"><li class="nav-item">
-            <%= link_to '<i class="fas fa-coins icon"></i>'.html_safe, "#", class: "nav-link" %>
+            <%= link_to '<i class="fas fa-coins icon"></i>'.html_safe, admin_baby_materials_path, class: "nav-link" %>
           </li></div>
           <div title = "Mes Messages"><li class="nav-item">
             <%= link_to '<i class="far fa-envelope icon"></i>'.html_safe, "#", class: "nav-link" %>

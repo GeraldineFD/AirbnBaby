@@ -1,7 +1,11 @@
 <h1>My Baby Materials</h1>
+<h3>To sale</h3>
 <% @baby_materials.each do |baby_material| %>
   <li><%=link_to baby_material.title, baby_material_path(baby_material)%></li>
 <% end %>
+<h3>Sold</h3>
+<h3>Booked</h3>
+
 
 <%= link_to 'Add a new baby material', new_baby_material_path %>
 
