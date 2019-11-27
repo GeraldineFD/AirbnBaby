@@ -2,12 +2,16 @@
   <h1 id = "banner-typed-text"></h1>
 </div>
 
-<h1>All Baby Materials</h1>
+<h1>My Baby Materials</h1>
+<h3>To sale</h3>
 
 <% @baby_materials.each do |baby_material| %>
 <%= cl_image_tag("#{baby_material.photo}",
       width: 400, height: 300, crop: :fill) %>
   <li><%=link_to baby_material.title, baby_material_path(baby_material)%></li>
 <% end %>
+<h3>Sold</h3>
+<h3>Booked</h3>
+
 
 
