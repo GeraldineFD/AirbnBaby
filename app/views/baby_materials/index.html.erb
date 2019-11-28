@@ -3,11 +3,19 @@
 </div>
 
 <h1>All Baby Materials</h1>
-
+<div class="container">
+  <div class="row">
 <% @baby_materials.each do |baby_material| %>
-<%= cl_image_tag("#{baby_material.photo}",
-      width: 400, height: 300, crop: :fill) %>
-  <li><%=link_to baby_material.title, baby_material_path(baby_material)%></li>
+<div class="col-4">
+<div class="card" style="background-image: url('<%= cl_image_path baby_material.photo, height: 300, width: 400, crop: :fill %>')">
+      <div class="card-description">
+        <h2><%=baby_material.title %></h2>
+      </div>
+
+      </div>
+  <%=link_to baby_material.title, baby_material_path(baby_material), class: 'card-link'%>
+</div>
 <% end %>
+</div>
 
-
+</div>

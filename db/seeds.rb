@@ -22,11 +22,23 @@ user9=User.create!(email: "user9@gmail.com", password: "password")
 user10=User.create!(email: "user10@gmail.com", password: "password")
 
 
+url = "http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_set.png"
 poussette=BabyMaterial.create!(title: "Poussette", description: 'La poussette est un moyen de transport pour enfant en bas âge.', address: '160 rue Paradis, Marseille', price: 20, rating: 3, user: user1)
+poussette.remote_photo_url = url
+url = "http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_set.png"
 litparapluie=BabyMaterial.create!(title: "Lit parapluie", description: 'Très bon état', address: '161 rue Paradis, Marseille', price: 20, rating: 3, user: user3)
+litparapluie.remote_photo_url = url
+url = "http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_set.png"
 cosy=BabyMaterial.create!(title: "Cosy", description: 'ok', address: '162 rue Paradis, Marseille', price: 20, rating: 3, user: user5)
+cosy.remote_photo_url = url
+url = "http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_set.png"
 chauffebiberon=BabyMaterial.create!(title: "Chauffebiberon", description: 'Très bon état', address: '163 rue Paradis, Marseille', price: 20, rating: 3, user: user7)
+chauffebiberon.remote_photo_url = url
+url = "http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_set.png"
 portebebe=BabyMaterial.create!(title: "Portebebe", description: 'Très léger', address: '164 rue Paradis, Marseille', price: 20, rating: 3, user: user9)
+portebebe.remote_photo_url = url
+
+
 
 
 
