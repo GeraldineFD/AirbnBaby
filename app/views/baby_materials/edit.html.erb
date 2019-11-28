@@ -1,16 +1,17 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4 offset-md-4">
-      <h1 class="title">Edit baby material</h1>
+      <h2 class="title">Edit baby material</h2>
 
       <%= simple_form_for @baby_material do |f| %>
         <%= f.input :title %>
         <%= f.input :description %>
+        <%= f.input :address %>
         <%= f.input :price,  as: :integer %>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
 
-        <div class="button"><%= f.button :submit, class: 'btn btn-outline-secondary button' %></div>
+        <div class="button"><%= f.button :submit, class: 'btn btn-outline-secondary' %></div>
       <% end %>
     </div>
   </div>
