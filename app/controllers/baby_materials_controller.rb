@@ -5,7 +5,9 @@ class BabyMaterialsController < ApplicationController
     @baby_materials = BabyMaterial.all
   end
 
-  def show; end
+  def show
+    @sale = Sale.new
+  end
 
   def new
     @baby_material = BabyMaterial.new
@@ -21,7 +23,8 @@ class BabyMaterialsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+  end
 
   def update
     @baby_material.update(material_params)
