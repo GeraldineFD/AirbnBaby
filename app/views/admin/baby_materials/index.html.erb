@@ -8,9 +8,12 @@
 <% @baby_materials.each do |baby_material| %>
 <%= cl_image_tag("#{baby_material.photo}",
       width: 400, height: 300, crop: :fill) %>
-  <li><%=link_to baby_material.title, baby_material_path(baby_material)%></li>
+  <li style=""><%=link_to baby_material.title, baby_material_path(baby_material)%></li>
 <% end %>
 <h3>Rented</h3>
+<% @rented.each do |rents| %>
+<%= rents.title %>
+<% end %>
 <h3>My Bookings</h3>
 
 <%= link_to 'Create a new baby material', new_baby_material_path %>

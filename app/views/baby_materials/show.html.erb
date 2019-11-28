@@ -9,14 +9,17 @@
 
 
 <div class="btn btn-success">
-  <p><%= link_to 'Delete' , baby_material_path, method: :delete, data: { confirm: 'Are you sure'} %></p>
+  <p><%= link_to 'Delete' , baby_material_path(@baby_material), method: :delete, data: { confirm: 'Are you sure'} %></p>
 </div>
 
 
 <div class="btn btn-success">
-  <p><%= link_to 'Edit' , edit_baby_material_path %></p>
+  <p><%= link_to 'Edit' , edit_baby_material_path(@baby_material) %></p>
 </div>
 
 <div class="btn btn-success">
-  <p><%= link_to 'Buy' , admin_baby_material_index_path %></p>
+  <%= simple_form_for([@baby_material, @sale], :url => baby_material_sales_path(@baby_material),:method => :post)  do |f| %>
+    <%= f.button :submit, class:"btn btn-primary" %>
+  <% end %>
+
 </div>
