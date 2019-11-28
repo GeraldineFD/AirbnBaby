@@ -25,12 +25,12 @@ class BabyMaterialsController < ApplicationController
 
   def update
     @baby_material.update(material_params)
-    redirect_to admin_baby_materials_path
+    redirect_to admin_baby_material_index_path
   end
 
   def destroy
     @baby_material.destroy
-    redirect_to admin_baby_materials_path
+    redirect_to admin_baby_material_index_path
   end
 
   private
