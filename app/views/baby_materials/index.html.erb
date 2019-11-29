@@ -2,21 +2,23 @@
   <h1 id = "banner-typed-text"></h1>
 </div>
 
-<h1>All Baby Materials</h1>
+<h1>Find out your Baby Materials</h1>
 <div class="container">
   <div class="row">
-<% @baby_materials.each do |baby_material| %>
-<div class="col-4">
-<div class="card" style="background-image: url('<%= cl_image_path baby_material.photo, height: 300, width: 400, crop: :fill %>')">
-      <div class="card-description">
-        <h2><%=baby_material.title %></h2>
-      </div>
 
+    <% @baby_materials.each do |baby_material| %>
+    <div class="col-4">
+      <div class="card" style="background-image: url('<%= cl_image_path baby_material.photo, height: 300, width: 400, crop: :fill %>')">
+        <div class="card-description">
+          <h2><%=baby_material.title %></h2>
+        </div>
       </div>
-  <%=link_to baby_material.title, baby_material_path(baby_material), class: 'card-link'%>
-</div>
-<% end %>
-</div>
+      <%=link_to baby_material.title, baby_material_path(baby_material), class: 'card-link'%>
+    </div>
+    <% end %>
+
+
+  </div>
 
 </div>
 

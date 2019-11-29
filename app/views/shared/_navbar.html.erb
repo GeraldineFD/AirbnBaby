@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
 
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to baby_materials_path, class: "navbar-brand" do %>
     <%= image_tag "logo.png" %>
     <% end %>
 
@@ -10,8 +10,17 @@
 
 
         <% if user_signed_in? %>
-          <div title = "Explorer"><li class="nav-item active">
-            <%= link_to '<i class="fas fa-search icon"></i>'.html_safe, baby_materials_path, class: "nav-link" %>
+
+          <div><li class="nav-item">
+
+              <%= form_tag baby_materials_path, method: :get do %>
+                <%= text_field_tag :query,
+                  params[:query],
+                  class: "form-control",
+                  placeholder: "Find a baby material"%>
+                <%= submit_tag "Search", class: "btn btn-outline-success my-2 my-sm-0" %>
+              <% end %>
+
           </li></div>
           <div title = "Favoris"><li class="nav-item">
             <%= link_to '<i class="far fa-heart icon"></i>'.html_safe, '#', class: "nav-link" %>

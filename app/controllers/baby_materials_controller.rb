@@ -10,6 +10,11 @@ class BabyMaterialsController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { baby_material: baby_material }),
         image_url: helpers.asset_url('')
       }
+    if params[:query].present?
+      sql_query = "title ILIKE :query"
+      @baby_materials = BabyMaterial.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @baby_materials = BabyMaterial.all
     end
   end
 
