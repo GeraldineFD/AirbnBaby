@@ -2,7 +2,12 @@ class BabyMaterialsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   before_action :set_baby_material, only: [:show, :edit, :update, :destroy]
   def index
-    @baby_materials = BabyMaterial.all
+    if params[:query].present?
+      sql_query = "title ILIKE :query"
+      @baby_materials = BabyMaterial.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @baby_materials = BabyMaterial.all
+    end
   end
 
   def show
