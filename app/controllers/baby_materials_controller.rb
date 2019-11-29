@@ -2,6 +2,14 @@ class BabyMaterialsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   before_action :set_baby_material, only: [:show, :edit, :update, :destroy]
   def index
+    @baby_materials = BabyMaterial.geocoded #returns baby_materials with coordinates
+    @markers = @baby_materials.map do |baby_material|
+      {
+        lat: baby_material.latitude,
+        lng: baby_material.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { baby_material: baby_material }),
+        image_url: helpers.asset_url('')
+      }
     if params[:query].present?
       sql_query = "title ILIKE :query"
       @baby_materials = BabyMaterial.where(sql_query, query: "%#{params[:query]}%")
@@ -12,6 +20,15 @@ class BabyMaterialsController < ApplicationController
 
   def show
     @sale = Sale.new
+
+    @markers = [
+      {
+        lat: @baby_material.latitude,
+        lng: @baby_material.longitude,
+        # infoWindow: render_to_string(partial: "info_window", locals: { baby_material: @baby_material }),
+        # image_url: helpers.asset_url('')
+      }
+    ]
   end
 
   def new
