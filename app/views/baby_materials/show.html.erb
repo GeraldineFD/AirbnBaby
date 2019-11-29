@@ -1,25 +1,20 @@
-<h2><%= @baby_material.title %></h2>
-<%= cl_image_tag @baby_material.photo, height: 300, width: 400, crop: :fill %>
-
-<p><%= @baby_material.description %></p>
-<p><%= @baby_material.address %></p>
-<p><%= @baby_material.price %></p>
-<p><%= @baby_material.rating %></p>
-<p><%= @baby_material.photo %></p>
-
-
-<div class="btn btn-success">
-  <p><%= link_to 'Delete' , baby_material_path(@baby_material), method: :delete, data: { confirm: 'Are you sure'} %></p>
-</div>
-
-
-<div class="btn btn-success">
-  <p><%= link_to 'Edit' , edit_baby_material_path(@baby_material) %></p>
-</div>
-
-<div class="btn btn-success">
-  <%= simple_form_for([@baby_material, @sale], :url => baby_material_sales_path(@baby_material),:method => :post)  do |f| %>
-    <%= f.button :submit, class:"btn btn-primary" %>
-  <% end %>
-
+<div class="container">
+  <div class="box">
+    <div class="card-product">
+      <%= cl_image_tag @baby_material.photo, height: 300, width: 400, crop: :fill %>
+      <div class="card-product-infos">
+        <h2><%= @baby_material.title %></h2>
+        <p><strong>Description: </strong><%= @baby_material.description %></p>
+        <p><strong>Address: </strong><%= @baby_material.address %></p>
+        <p><strong>Price: </strong><%= @baby_material.price %>€</p>
+      </div>
+    </div>
+  </div>
+  <div class="button margined">
+    <%= link_to 'Delete' , baby_material_path(@baby_material), method: :delete, data: { confirm: 'Are you sure'}, class: "btn btn-flat"%>
+    <%= link_to 'Edit' , edit_baby_material_path(@baby_material), class: "btn btn-flat"%>
+    <%= simple_form_for([@baby_material, @sale], :url => baby_material_sales_path(@baby_material),:method => :post)  do |f| %>
+    <%= f.button :submit, 'Rent', class:"btn btn-flat" %>
+    <% end %>
+  </div>
 </div>
